@@ -1,0 +1,7 @@
+<%= form_with(model: @cart_item, url: cart_item_url, local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :quantity, class: 'text-primary' %>
+    <%= form.number_field :quantity, value: @cart_item.quantity, class: 'form-control', style: 'border-color: #87CEEB;' %>
+  </div>
+  <%= form.submit 'Update Quantity', class: 'btn btn-primary' %>
+<% end %>

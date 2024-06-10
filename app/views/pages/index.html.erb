@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+  <div class="container mt-5">
+    <%= link_to 'Books', books_path, class: 'btn btn-outline-primary mt-3' %>
+    <%= link_to 'Your cart', cart_path(current_user), class: 'btn btn-outline-primary mt-3' %>
+
+    <div class="d-flex justify-content-end">
+      <%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-outline-danger mt-3, d-flex justify-content-end ', data: { turbo_method: :delete } %>
+    </div>
+    <br>
+    <div class="card shadow-sm">
+      <div class="card-body text-center">
+        <h1 class="display-4 text-primary">Welcome Home, <%= current_user.email %></h1>
+      </div>
+    </div>
+
+  </div>
+<% else %>
+  <div class="container mt-5">
+    <div class="card shadow-sm">
+      <div class="card-body text-center">
+        <h1 class="display-4 text-primary">Home</h1>
+        <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-outline-primary mt-3' %>
+      </div>
+    </div>
+  </div>
+<% end %>

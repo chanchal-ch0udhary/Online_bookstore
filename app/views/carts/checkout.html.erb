@@ -1,0 +1,15 @@
+<h1>Checkout</h1>
+
+<%= form_with url: complete_order_path, method: :post do %>
+  <div class="form-group">
+    <%= label_tag :address, 'Address', class: 'text-primary' %>
+    <%= text_field_tag :address, nil, class: 'form-control', style: 'border-color: #87CEEB;' %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :credit_card_number, 'Credit Card Number', class: 'text-primary' %>
+    <%= text_field_tag :credit_card_number, nil, class: 'form-control', style: 'border-color: #87CEEB;' %>
+  </div>
+
+  <%= submit_tag 'Complete Order', class: 'btn btn-primary' %>
+<% end %>
