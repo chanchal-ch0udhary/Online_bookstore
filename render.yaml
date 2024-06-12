@@ -1,7 +1,7 @@
 databases:
   - name: onlinebBookstore
-    databaseName: onlinebBookstore
-    user: onlinebBookstore
+    databaseName: online_bookstore
+    user: online_user
     plan: free
 
 services:
